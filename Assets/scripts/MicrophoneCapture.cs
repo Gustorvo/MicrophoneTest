@@ -64,13 +64,14 @@ public class MicrophoneCapture : MonoBehaviour
     //this is needed for MacOs in order to trigger Mic access
     IEnumerator SimulateRecording()
     {
-        bool accessGranted = Application.HasUserAuthorization(UserAuthorization.Microphone);
-        if (!accessGranted)
-        {
+        //bool accessGranted = Application.HasUserAuthorization(UserAuthorization.Microphone);
+        //if (!accessGranted)
+        //{
             yield return new WaitForSeconds(1);
             StartRecording();
             yield return new WaitForSeconds(1);
-            AbortRecording();        }
+            AbortRecording();
+        //}
     }
 
     private void Init()
